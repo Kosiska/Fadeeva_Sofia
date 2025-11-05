@@ -9,15 +9,6 @@ double summa(double h,double s,double p){ //общая сумма с учетом премии
     return n;
 }
 
-double nalog(double sum){ // сумма налогов
-    double s = sum * 0.13;
-    return s;
-}
-
-double totl(double sum, double nal){ // зп на руки работнику
-    double t = sum - nal;
-    return t;
-}
 
 int main(){
     setlocale(LC_ALL, "Russian");
@@ -43,30 +34,34 @@ int main(){
         cout << "% премии: ";
         cin >> prem;
 
-        double s = summa(hours,rate,prem);
-        nalogi[i] = nalog(s);
-        salary[i] = totl(s, nalog(s));
+        nalogi[i] = summa(hours,rate,prem) * 0.13;
+        salary[i] = summa(hours,rate,prem) * 0.87;
     }
     
 
     for (int i = 0; i < size; i++){
-
         if (salary[i] < min){ // номер работника с мин зп
-            nmin = i+1;
-            min = salary[i];}
+            nmin = i;
+            min = salary[i];
+        }
 
         if (salary[i] > maxs){// номер и сумма зп работника с макс зп
             nmax = i+1;
-            maxs = salary[i];} 
+            maxs = salary[i];
+        } 
 
         if (salary[i] > 50000){// кол-во и номера с зп>50000
         k ++;
         string n = to_string(i+1) + " ";
-        numb += n;}
+        numb += n;
+        }
+        
         sum += nalogi[i];
+        delete[] salary;
+        delete[] nalogi;
     }
 
-    cout << "номер работника, получившего меньше всех: " <<nmin << endl;
+    cout << "номер работника, получившего меньше всех: " << nmin + 1 << endl;
     cout << "максимальная из зарплат и номер получившего ее работника: " << maxs << " " << nmax << endl;
     cout << "количество работников, получивших на руки более 50000 руб: "<< k << " и их номера: " << numb << endl;
     cout << "общая сумма налога, уплаченного всей бригадой: "<< sum;
