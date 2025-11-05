@@ -5,7 +5,7 @@ using namespace std;
 
 
     // for (int i = 0; i < 2; i++){
-    //     cout << i+1 << " ðàáîòíèê: " << endl;
+    //     cout << i+1 << " Ñ€Ð°Ð±Ð¾Ñ‚Ð½Ð¸Ðº: " << endl;
     //     vvod(h, s, fam);
     //     f(h, s, salary, nalog, total);
         
@@ -20,9 +20,9 @@ using namespace std;
 
 void vvod(double& h, double& s, string& fam){
     
-    cout << "Ââåäèòå ôàìèëèþ ðàáîòíèêà: ";
+    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ„Ð°Ð¼Ð¸Ð»Ð¸ÑŽ Ñ€Ð°Ð±Ð¾Ñ‚Ð½Ð¸ÐºÐ°: ";
     cin >> fam;
-    cout << "Ââåäèòå êîë-âî îòðàáîòàííûõ ÷àñîâ è ñòàâêó: ";
+    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð»-Ð²Ð¾ Ð¾Ñ‚Ñ€Ð°Ð±Ð¾Ñ‚Ð°Ð½Ð½Ñ‹Ñ… Ñ‡Ð°ÑÐ¾Ð² Ð¸ ÑÑ‚Ð°Ð²ÐºÑƒ: ";
     cin >> h >> s;
     cin.ignore();
 }
@@ -43,16 +43,16 @@ int main(){
     double h1, s1, h2, s2, salary1, salary2, nalog1, nalog2, total1, total2;
     string fam1, fam2, fam;
     
-    cout << "Äëÿ 1 ðàáîòíèêà: "<< endl;
+    cout << "Ð”Ð»Ñ 1 Ñ€Ð°Ð±Ð¾Ñ‚Ð½Ð¸ÐºÐ°: "<< endl;
     vvod(h1,s1,fam1);
     f(h1,s1,salary1,nalog1,total1);
 
-    cout << "Äëÿ 2 ðàáîòíèêà: "<< endl;
+    cout << "Ð”Ð»Ñ 2 Ñ€Ð°Ð±Ð¾Ñ‚Ð½Ð¸ÐºÐ°: "<< endl;
     vvod(h2,s2,fam2);
     f(h2,s2,salary2,nalog2,total2);
 
 
-    cout << "Ôàìèëèè òåõ, êòî ïîëó÷èë íà ðóêè ìåíüøå 1000 ðóá - ";
+    cout << "Ð¤Ð°Ð¼Ð¸Ð»Ð¸Ð¸ Ñ‚ÐµÑ…, ÐºÑ‚Ð¾ Ð¿Ð¾Ð»ÑƒÑ‡Ð¸Ð» Ð½Ð° Ñ€ÑƒÐºÐ¸ Ð¼ÐµÐ½ÑŒÑˆÐµ 1000 Ñ€ÑƒÐ± - ";
     if (total1 < 1000) {
         cout << fam1 << endl;
     }
@@ -62,7 +62,7 @@ int main(){
     cout << endl;
 
 
-    cout << "Ðàáîòíèêè ñ íàëîãîì áîëåå 50 ðóáëåé (ïåðâàÿ è ïîñëåäíÿÿ áóêâà ôàìèëèè):" << endl;
+    cout << "Ð Ð°Ð±Ð¾Ñ‚Ð½Ð¸ÐºÐ¸ Ñ Ð½Ð°Ð»Ð¾Ð³Ð¾Ð¼ Ð±Ð¾Ð»ÐµÐµ 50 Ñ€ÑƒÐ±Ð»ÐµÐ¹ (Ð¿ÐµÑ€Ð²Ð°Ñ Ð¸ Ð¿Ð¾ÑÐ»ÐµÐ´Ð½ÑÑ Ð±ÑƒÐºÐ²Ð° Ñ„Ð°Ð¼Ð¸Ð»Ð¸Ð¸):" << endl;
     if (nalog1 > 50) {
         cout << fam1[0] << "-" << fam1[fam1.length() - 1] << endl;
     }

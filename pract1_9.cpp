@@ -3,7 +3,7 @@
 #include <string>
 using namespace std;
 
-int min_element( double n[], double size ){ //номер минимального элемента
+int min_element( double n[], double size ){ //РЅРѕРјРµСЂ РјРёРЅРёРјР°Р»СЊРЅРѕРіРѕ СЌР»РµРјРµРЅС‚Р°
     int k = 0, min = n[0];
     for (int i = 0; i < size ; i++ ){
         if (n[i] < min){
@@ -15,7 +15,7 @@ int min_element( double n[], double size ){ //номер минимального элемента
 }
 
 
-string max_element_num( double n[], double size ){ //макс элемент и его номер
+string max_element_num( double n[], double size ){ //РјР°РєСЃ СЌР»РµРјРµРЅС‚ Рё РµРіРѕ РЅРѕРјРµСЂ
     int k = 0, m = -100000;
     string s;
     for (int i = 0; i < size ; i++ ){
@@ -29,7 +29,7 @@ string max_element_num( double n[], double size ){ //макс элемент и его номер
 }
 
 
-string bigger_el_num( double n[] , double s, double size){ //кол-во элементов и номера, которые больше заданного числа (s)
+string bigger_el_num( double n[] , double s, double size){ //РєРѕР»-РІРѕ СЌР»РµРјРµРЅС‚РѕРІ Рё РЅРѕРјРµСЂР°, РєРѕС‚РѕСЂС‹Рµ Р±РѕР»СЊС€Рµ Р·Р°РґР°РЅРЅРѕРіРѕ С‡РёСЃР»Р° (s)
     int k = 0;
     string res, nums = "";
     for (int i = 0; i < size ; i++ ){
@@ -43,7 +43,7 @@ string bigger_el_num( double n[] , double s, double size){ //кол-во элементов и 
 }
 
 
-double sum( double n[] ,double size){ // сумма всех элементов массива
+double sum( double n[] ,double size){ // СЃСѓРјРјР° РІСЃРµС… СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР°
     double k = 0;
     for (int i = 0; i < size ; i++ ){
             k += n[i];
@@ -54,7 +54,7 @@ double sum( double n[] ,double size){ // сумма всех элементов массива
 
 
 
-double summa(double h,double s,double p){ //зп работника без вычета налогов
+double summa(double h,double s,double p){ //Р·Рї СЂР°Р±РѕС‚РЅРёРєР° Р±РµР· РІС‹С‡РµС‚Р° РЅР°Р»РѕРіРѕРІ
     double n;
     n = h * s * (1 + p / 100);
     return n;
@@ -66,19 +66,19 @@ int main(){
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
     
-    int size; // размер будущих массивов
+    int size; // СЂР°Р·РјРµСЂ Р±СѓРґСѓС‰РёС… РјР°СЃСЃРёРІРѕРІ
     double hours, rate, prem;
     
-    cout << "Введите кол-во работников: ";
+    cout << "Р’РІРµРґРёС‚Рµ РєРѕР»-РІРѕ СЂР°Р±РѕС‚РЅРёРєРѕРІ: ";
     cin >> size ;
 
-    double* salary = new double[size]; //массив с зп
-    double* nalogi = new double[size]; //массив с налогами
+    double* salary = new double[size]; //РјР°СЃСЃРёРІ СЃ Р·Рї
+    double* nalogi = new double[size]; //РјР°СЃСЃРёРІ СЃ РЅР°Р»РѕРіР°РјРё
 
 
     for (int i = 0; i < size; i++){
-        cout << "для " << i+1 << " работника:" << endl;
-        cout << "кол-во часов, ставка, премия: ";
+        cout << "РґР»СЏ " << i+1 << " СЂР°Р±РѕС‚РЅРёРєР°:" << endl;
+        cout << "РєРѕР»-РІРѕ С‡Р°СЃРѕРІ, СЃС‚Р°РІРєР°, РїСЂРµРјРёСЏ: ";
         cin >> hours >> rate >> prem;
 
         double su = summa(hours,rate,prem);
@@ -87,10 +87,10 @@ int main(){
     }
 
 
-    cout << "номер работника, получившего меньше всех: " << min_element(salary, size) << endl;
-    cout << "максимальная из зарплат и номер получившего ее работника: " << max_element_num(salary, size) << endl;
-    cout << "количество работников, получивших на руки более 50000 руб и их номера: "<< bigger_el_num(salary, 50000, size) << endl;
-    cout << "общая сумма налога, уплаченного всей бригадой: "<< sum(nalogi, size);
+    cout << "РЅРѕРјРµСЂ СЂР°Р±РѕС‚РЅРёРєР°, РїРѕР»СѓС‡РёРІС€РµРіРѕ РјРµРЅСЊС€Рµ РІСЃРµС…: " << min_element(salary, size) << endl;
+    cout << "РјР°РєСЃРёРјР°Р»СЊРЅР°СЏ РёР· Р·Р°СЂРїР»Р°С‚ Рё РЅРѕРјРµСЂ РїРѕР»СѓС‡РёРІС€РµРіРѕ РµРµ СЂР°Р±РѕС‚РЅРёРєР°: " << max_element_num(salary, size) << endl;
+    cout << "РєРѕР»РёС‡РµСЃС‚РІРѕ СЂР°Р±РѕС‚РЅРёРєРѕРІ, РїРѕР»СѓС‡РёРІС€РёС… РЅР° СЂСѓРєРё Р±РѕР»РµРµ 50000 СЂСѓР± Рё РёС… РЅРѕРјРµСЂР°: "<< bigger_el_num(salary, 50000, size) << endl;
+    cout << "РѕР±С‰Р°СЏ СЃСѓРјРјР° РЅР°Р»РѕРіР°, СѓРїР»Р°С‡РµРЅРЅРѕРіРѕ РІСЃРµР№ Р±СЂРёРіР°РґРѕР№: "<< sum(nalogi, size);
     delete[] salary;
     delete[] nalogi;
 

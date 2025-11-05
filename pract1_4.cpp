@@ -3,7 +3,7 @@ using namespace std;
 
 
 void vvod(double& h, double& s, double& p){
-    cout << "Ââåäèòå ÷àñû ðàáîòû, ñòàâêó è ïðåìèþ ðàáîòíèêà: ";
+    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ‡Ð°ÑÑ‹ Ñ€Ð°Ð±Ð¾Ñ‚Ñ‹, ÑÑ‚Ð°Ð²ÐºÑƒ Ð¸ Ð¿Ñ€ÐµÐ¼Ð¸ÑŽ Ñ€Ð°Ð±Ð¾Ñ‚Ð½Ð¸ÐºÐ°: ";
     cin >> h >> s >> p;
 }
 
@@ -20,7 +20,7 @@ int main(){
     double h, s, p, nalog, salary, total;
     vvod(h, s,p);
     f(h, s, p, salary, nalog, total);
-    cout << "Îáùàÿ ñóììà, ñóììà íàëîãà è çï íà ðóêè: ";
+    cout << "ÐžÐ±Ñ‰Ð°Ñ ÑÑƒÐ¼Ð¼Ð°, ÑÑƒÐ¼Ð¼Ð° Ð½Ð°Ð»Ð¾Ð³Ð° Ð¸ Ð·Ð¿ Ð½Ð° Ñ€ÑƒÐºÐ¸: ";
     cout << salary << " " << nalog << " " << total;
 
     return 0;
