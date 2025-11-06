@@ -1,9 +1,9 @@
 #include <iostream>
 #include <windows.h>
 #include <ctime>
-using namespace std; //выбор вставки пузырек
+using namespace std; //РІС‹Р±РѕСЂ РІСЃС‚Р°РІРєРё РїСѓР·С‹СЂРµРє
 
-void random_fill(int s[], int n, int start, int end){ //функция заполнения s[] случайными числами
+void random_fill(int s[], int n, int start, int end){ //С„СѓРЅРєС†РёСЏ Р·Р°РїРѕР»РЅРµРЅРёСЏ s[] СЃР»СѓС‡Р°Р№РЅС‹РјРё С‡РёСЃР»Р°РјРё
     srand(time(0));
     for (int i = 0; i < n; i ++){
         int x = rand() % (end - start + 1) + start;
@@ -11,7 +11,7 @@ void random_fill(int s[], int n, int start, int end){ //функция заполнения s[] с
     }
 }
 
-void vivo(int s[], int n){ //вывод массива
+void vivo(int s[], int n){ //РІС‹РІРѕРґ РјР°СЃСЃРёРІР°
 
      for (int i = 0; i < n; i++){
         cout << s[i] << " ";
@@ -19,7 +19,7 @@ void vivo(int s[], int n){ //вывод массива
     cout << endl;
 }
 
-void search(int s[], int n){ //сортировка выбором (поиском)
+void search(int s[], int n){ //СЃРѕСЂС‚РёСЂРѕРІРєР° РІС‹Р±РѕСЂРѕРј (РїРѕРёСЃРєРѕРј)
     for (int i = 0; i < n; i++){
         int jmin = i;
         for (int j = i + 1; j < n; j++){
@@ -33,7 +33,7 @@ void search(int s[], int n){ //сортировка выбором (поиском)
 }
 
 
-void insert(int s[], int n){ //сортировка вставкой
+void insert(int s[], int n){ //СЃРѕСЂС‚РёСЂРѕРІРєР° РІСЃС‚Р°РІРєРѕР№
     for (int i = 1; i < n; i++){
         int tmp = s[i];
         int j = i;
@@ -49,7 +49,7 @@ void insert(int s[], int n){ //сортировка вставкой
 
 
 
-void bubble(int s[], int n){ //сортировка пузырьком
+void bubble(int s[], int n){ //СЃРѕСЂС‚РёСЂРѕРІРєР° РїСѓР·С‹СЂСЊРєРѕРј
     bool f = true;
     int j = 0;
     while(f){
@@ -68,9 +68,9 @@ int main(){
     setlocale(0, "");
     int n = 100, start = 0, end = 9999;
     int* s = new int[n];
-    cout << "До заполнения массива числами:" << endl;
+    cout << "Р”Рѕ Р·Р°РїРѕР»РЅРµРЅРёСЏ РјР°СЃСЃРёРІР° С‡РёСЃР»Р°РјРё:" << endl;
     vivo(s, n);
-    cout << endl << "После заполнения случайными числами: " << endl;;
+    cout << endl << "РџРѕСЃР»Рµ Р·Р°РїРѕР»РЅРµРЅРёСЏ СЃР»СѓС‡Р°Р№РЅС‹РјРё С‡РёСЃР»Р°РјРё: " << endl;;
     random_fill(s, n, start, end);
     vivo(s, n);
 
